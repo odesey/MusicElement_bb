@@ -11,7 +11,107 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715034623) do
+ActiveRecord::Schema.define(:version => 20130715180653) do
+
+  create_table "album_tracks", :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "track_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "albums", :force => true do |t|
+    t.string   "image"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "album_artist"
+    t.integer  "artist_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "artist_images", :force => true do |t|
+    t.integer  "artist_id"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "artist_tracks", :force => true do |t|
+    t.integer  "artist_id"
+    t.integer  "track_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "artists", :force => true do |t|
+    t.integer  "age"
+    t.date     "birthday"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "image_id"
+    t.string   "name"
+    t.string   "gender"
+    t.integer  "alias_id"
+    t.string   "artist_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "genres", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "libraries", :force => true do |t|
+    t.integer  "album_id"
+    t.string   "image"
+    t.string   "name"
+    t.integer  "track_id"
+    t.integer  "user_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "library_playlists", :force => true do |t|
+    t.integer  "library_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "playlist_tracks", :force => true do |t|
+    t.integer  "playlist_id"
+    t.integer  "track_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "playlists", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.integer  "user_id"
+    t.integer  "library_id"
+    t.boolean  "private"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.string   "title"
+    t.string   "track_path"
+    t.integer  "track_number"
+    t.date     "year"
+    t.integer  "bpm"
+    t.integer  "length"
+    t.float    "size"
+    t.integer  "user_id"
+    t.integer  "genre_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
