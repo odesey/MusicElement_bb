@@ -5,19 +5,40 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'thinking-sphinx', '~> 3.0.2'
+gem 'pg'
+gem "devise", "~> 2.2.4"
+gem 'carrierwave'
+gem 'taglib-ruby'
+gem 'pry'
+gem 'pry-debugger'
+gem 'ruby-mp3info'
+gem "paperclip", "~> 3.0"
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'mediawiki-gateway'
+gem "better_errors"
+gem "binding_of_caller"
+gem 'mysql2'
+gem 'letsrate'
+gem 'rspec-rails'
+gem 'guard-rspec'
+gem 'ejs'
+gem 'simplecov', :require => false, :group => :test
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
+  gem 'therubyracer'
+  gem 'less-rails'
+  # Add Foundation Here
+  # gem 'zurb-foundation', '~> 4.0.0'
+  # gem 'foundation-icons-sass-rails'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'

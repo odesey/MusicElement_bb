@@ -12,4 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
+//= require jquery-ui-1.10.3.custom.min
+//= require jquery-fileupload/basic
+//= require underscore
+//= require ejs_production
+//= require backbone
+//= require boot
+//= require router
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./templates
+//= require_tree ./views
+//= require init
+//= require soundmanager2
 //= require_tree .
